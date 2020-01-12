@@ -1,0 +1,19 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "node_modules": true,
+        "dist": true
+    },
+    "tslint.ignoreDefinitionFiles": false,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.tslint": true
+    },	
+    "eslint.validate": ["javascript", "javascriptreact"],
+    "typescript.referencesCodeLens.enabled": true,
+    "typescript.tsdk": "node_modules\\typescript\\lib"
+}
