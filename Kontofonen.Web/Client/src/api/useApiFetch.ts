@@ -1,5 +1,9 @@
 import useFetch from "fetch-suspense";
-import { Accounts as AccountsType } from "../../types/types";
+import {
+  Accounts as AccountsType,
+  Account as AccountType,
+  Transactions as TransactionsType
+} from "../../types/types";
 
 const baseUrl = window.location.origin + "/api/";
 
@@ -12,4 +16,13 @@ function useFetchAccounts() {
   return useFetchType<AccountsType>("account");
 }
 
-export { useFetchAccounts };
+function useFetchAccount(accountId: string) {
+  return useFetchType<AccountType>(`account/${accountId}`);
+}
+
+function useFetchTransactionsForAccount(accountId: string) {
+  return useFetchType<TransactionsType>(`account/${accountId}/transactions`)
+    .transactions;
+}
+
+export { useFetchAccounts, useFetchAccount, useFetchTransactionsForAccount };
